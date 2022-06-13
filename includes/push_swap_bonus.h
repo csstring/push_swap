@@ -6,12 +6,12 @@
 /*   By: schoe <schoe@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:04:28 by schoe             #+#    #+#             */
-/*   Updated: 2022/06/13 19:58:16 by schoe            ###   ########.fr       */
+/*   Updated: 2022/06/13 19:52:32 by schoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 # include <stdlib.h>
 
 typedef struct s_push_list
@@ -33,12 +33,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-typedef struct s_command_list
-{
-	char					*str;
-	struct s_command_list	*next;
-}	t_cmd;
-
 //quick_sort
 void	ft_swap_val(t_push *a, t_push *b);
 t_push	*ft_part(t_push *start, t_push *end);
@@ -48,41 +42,22 @@ t_push	*ft_last_node(t_push *list);
 t_push	*ft_avnew(int val, int index);
 void	ft_avadd_back(t_push **lst, t_push *new);
 void	ft_get_av(char **av, t_push **sort_list);
-//cmd node//
-void	ft_cmd_node(t_cmd **cmd, char *input);
-void	ft_print_cmd(t_cmd **cmd);
-void	ft_2node_clear(t_cmd **cmd, char *str);
 //command//
-int		swap_a(t_cmd **cmd, t_stack *a);
-int		swap_b(t_cmd **cmd, t_stack *b);
-void	swap_ab(t_cmd **cmd, t_stack *a, t_stack *b);
-int		push_a(t_cmd **cmd, t_stack **a, t_stack **b);
-int		push_b(t_cmd **cmd, t_stack **a, t_stack **b);
-int		rot_a(t_cmd **cmd, t_stack **a);
-int		rot_b(t_cmd **cmd, t_stack **b);
-int		rrot_a(t_cmd **cmd, t_stack **a);
-int		rrot_b(t_cmd **cmd, t_stack **b);
-void	rot_ab(t_cmd **cmd, t_stack **a, t_stack **b);
-void	rrot_ab(t_cmd **cmd, t_stack **a, t_stack **b);
-//div,utils
-void	ft_cw(t_cmd **cmd, t_stack **a, t_stack **b, int max);
-void	ft_ccw(t_cmd **cmd, t_stack **a, t_stack **b, int max);
-int		ft_short_rot(t_stack *c, int min, int max);
-void	ft_quick_rot(t_cmd **cmd, t_stack **a, t_stack **b, t_push *sort_list);
-void	ft_div(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list);
+int		swap_a(t_stack *a);
+int		swap_b(t_stack *b);
+void	swap_ab(t_stack *a, t_stack *b);
+int		push_a(t_stack **a, t_stack **b);
+int		push_b(t_stack **a, t_stack **b);
+int		rot_a(t_stack **a);
+int		rot_b(t_stack **b);
+int		rrot_a(t_stack **a);
+int		rrot_b(t_stack **b);
+void	rot_ab(t_stack **a, t_stack **b);
+void	rrot_ab(t_stack **a, t_stack **b);
 //error_check
 void	ft_digit_check(char **av);
 void	ft_int_check(char **av);
-int		ft_sort_check(t_stack *a, int ac);
-//push_swap, utils
-void	ft_rot_stack(t_cmd **cmd, t_stack **a, t_stack **b);
-t_stack	*find_min_count(t_stack *b);
-int		ft_max_min_check(t_stack *a, int b_val);
-void	ft_b_short(t_stack *b);
-int		ft_find_target(t_stack *a, int b_val);
-int		ft_a_short(t_stack *a, int target);
-void	ft_sort_stack(t_cmd **cmd, t_stack **a, t_stack **b);
-void	ft_push_swap(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list);
+int		ft_dup_check(t_stack *a);
 //stack_list
 void	ft_stackadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_stacknew(int val);

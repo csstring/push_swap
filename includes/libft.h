@@ -6,7 +6,7 @@
 /*   By: schoe <schoe@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 21:19:00 by schoe             #+#    #+#             */
-/*   Updated: 2022/05/16 12:59:13 by schoe            ###   ########.fr       */
+/*   Updated: 2022/06/13 13:15:35 by schoe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
+ssize_t	ft_atoli(const char *str);
+int		ft_abs(int a);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putendl_fd(char *s, int fd);

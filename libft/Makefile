@@ -6,11 +6,11 @@
 #    By: schoe <schoe@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 17:04:36 by schoe             #+#    #+#              #
-#    Updated: 2022/06/10 15:20:41 by schoe            ###   ########.fr        #
+#    Updated: 2022/06/13 15:19:39 by schoe            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror 
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	   ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
@@ -21,7 +21,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
        ft_tolower.c ft_toupper.c ft_lstadd_back.c ft_lstadd_front.c \
        ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c \
        ft_lstnew.c ft_lstsize.c ft_ultoa.c ft_printf.c ft_printf_utils.c \
-       ft_u_convert_base.c get_next_line.c
+       ft_u_convert_base.c get_next_line.c ft_atoli.c ft_abs.c
 OBJS = ${SRCS:.c=.o}
 RM = rm -f
 INCLUDE = -I../includes
